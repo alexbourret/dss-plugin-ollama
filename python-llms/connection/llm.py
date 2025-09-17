@@ -10,6 +10,7 @@ class OllamaLLM(BaseLLM):
         pass
 
     def process(self, query, settings, trace):
+        print("ALX:query={}, settings={}".format(query, settings))
         prompt = query["messages"][0]["content"]
 
         # Add code here, for LLM completion, tool execution, etc...
