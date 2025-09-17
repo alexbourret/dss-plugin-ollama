@@ -2,7 +2,7 @@
 from dataiku.llm.python import BaseLLM
 
 
-class MyLLM(BaseLLM):
+class OllamaLLM(BaseLLM):
     def __init__(self):
         pass
 
