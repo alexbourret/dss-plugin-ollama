@@ -1,4 +1,3 @@
-# This file is the implementation of custom LLM connection
 from dataiku.llm.python import BaseLLM
 
 
