@@ -5,5 +5,40 @@
     "icon": "fas fa-magic"
   },
   "params": [
+        {
+            "name": "model_select",
+            "label": "Select model",
+            "type": "SELECT",
+            "getChoicesFromPython": true
+        },
+        {
+            "name": "display_advanced_parameters",
+            "label": " ",
+            "description": "Advanced parameters",
+            "type": "BOOLEAN"
+        },
+        {
+            "name": "server_url",
+            "label": "URL to Ollama instance",
+            "type": "STRING",
+            "description": "",
+            "defaultValue": "http://localhost:11434",
+            "visibilityCondition": "model.display_advanced_parameters"
+        },
+        {
+            "name": "output_format",
+            "label": "Output format",
+            "type": "SELECT",
+            "selectChoices": [
+                {
+                    "label": "Not specified"
+                },
+                {
+                    "value": "json",
+                    "label": "JSON"
+                }
+            ],
+            "visibilityCondition": "model.display_advanced_parameters"
+        }
   ]
 }
