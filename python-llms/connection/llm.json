@@ -9,7 +9,19 @@
             "name": "model_select",
             "label": "Select model",
             "type": "SELECT",
-            "getChoicesFromPython": true
+            "selectChoices": [
+                {
+                    "label": "✍️ Enter manually"
+                }
+            ]
+        },
+        {
+            "name": "model_name",
+            "label": "Model name",
+            "type": "STRING",
+            "description": "Model name or {{column with model name}}",
+            "defaultValue": "mistral",
+            "visibilityCondition": "model.model_select==None"
         },
         {
             "name": "display_advanced_parameters",
