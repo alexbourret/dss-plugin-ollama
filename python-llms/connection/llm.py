@@ -16,7 +16,7 @@ class OllamaLLM(BaseLLM):
 
     def process(self, query, settings, trace):
         print("query={}, settings={}".format(query, settings))
-        prompt = query.get("messages", [{}])[0].get("content")
+        prompt = query.get("messages", [{}])[-1].get("content")
 
         data = {
           "model": "{}".format(self.model_name),
