@@ -21,7 +21,7 @@ class OllamaLLM(BaseLLM):
         print("OllamaLLM:process")
         # print("query={}, settings={}".format(query, settings))
         available_tools = get_tools_definitions(settings)
-        print("Found {} tools for this agent".formta(len(available_tools)))
+        print("Found {} tools for this agent".format(len(available_tools)))
         messages = query.get("messages", [])
 
         done = False
