@@ -42,11 +42,12 @@ class OllamaLLM(BaseLLM):
                 data["format"] = self.output_format
             if available_tools:
                 data["tools"] = available_tools
+            response = None
             try:
                 print("Sending request")
                 response = requests.post(url="{}/api/chat".format(self.server_url), json=data)
             except Exception as error:
-                if response:
+                if response is not None:
                     print("Error {}, dumping response: {}".format(
                         error,
                         response.content
