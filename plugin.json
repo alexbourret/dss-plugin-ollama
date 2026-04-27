@@ -1,11 +1,12 @@
 {
     "id": "ollama",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "meta": {
         "label": "Ollama",
         "description": "",
         "author": "Alex Bourret",
         "icon": "icon-magic",
+        "category": "AI/ML",
         "tags": [],
         "url": "",
         "licenseInfo": "Apache Software License"
