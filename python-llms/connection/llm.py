@@ -21,7 +21,7 @@ class OllamaLLM(BaseLLM):
         print("OllamaLLM:process")
         # print("query={}, settings={}".format(query, settings))
         available_tools = get_tools_definitions(settings)
-        print("Found {} tools for this agent".formta(len(available_tools)))
+        print("Found {} tools for this agent".format(len(available_tools)))
         messages = query.get("messages", [])
 
         done = False
@@ -42,11 +42,12 @@ class OllamaLLM(BaseLLM):
                 data["format"] = self.output_format
             if available_tools:
                 data["tools"] = available_tools
+            response = None
             try:
                 print("Sending request")
                 response = requests.post(url="{}/api/chat".format(self.server_url), json=data)
             except Exception as error:
-                if response:
+                if response is not None:
                     print("Error {}, dumping response: {}".format(
                         error,
                         response.content
